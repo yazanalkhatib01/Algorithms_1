@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+enum enPassFail{pass=1,fail=2};
+
+int ReadMark() {
+
+	int mark;
+	cout << "Enter Your Mark:" << endl;
+	cin >> mark;
+	return mark;
+}
+
+enPassFail CheckMark(int mark) {
+
+	if (mark >= 50)
+		return enPassFail::pass;
+	else
+		return enPassFail::fail;
+}
+
+void PrentMark(int mark) {
+
+	if (CheckMark(mark) == enPassFail::pass)
+		cout << "You Passed" << endl;
+	else
+		cout << "You Failed" << endl;
+}
+
+int main()
+{//8 Pro Solution
+
+	PrentMark(ReadMark());
+
+	return 0;
+}
