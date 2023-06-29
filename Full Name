@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct stInfo {
+
+	string FirstName;
+	string LastName;
+};
+
+stInfo Read_Info() {
+
+	stInfo Info;
+
+	cout << "Enter Your First Name?" << endl;
+	cin >> Info.FirstName;
+
+	cout << "Enter Your Last Name?" << endl;
+	cin >> Info.LastName;
+
+	return Info;
+};
+
+string Get_FullName(stInfo Info) {
+
+	string FullName = "";
+
+	FullName = Info.FirstName + " " + Info.LastName;
+
+	return FullName;
+}
+
+void Print_result(string fullname) {
+
+	cout << "\nWilcome " << fullname << endl;
+};
+
+int main()
+{//6 Pro Solution
+	
+	Print_result(Get_FullName(Read_Info()));
+
+	return 0;
+}
