@@ -1,0 +1,72 @@
+#include <iostream>
+#include <string>
+using namespace std;
+//Sum_Even_Numbers_From_1toN_Using For, While, DoWhile
+
+int Read_Number() {
+
+	int num;
+	cout << "Enter Number:" << endl;
+	cin >> num;
+	return num;
+}
+
+enum en_Odd_OR_Even { Odd = 1, Even = 2 };
+en_Odd_OR_Even Check_Odd_OR_Even(int num) {
+
+	if (num % 2 != 0)
+		return en_Odd_OR_Even::Odd;
+	else
+		return en_Odd_OR_Even::Even;
+}
+int Sum_Even_Numbers_From_1toN_Using_For(int num) {
+
+	cout << "Sum_Even_Numbers_From_1toN_Using_For:" << endl;
+	int sum = 0;
+	for (int Counter = 1; Counter <= num; Counter++)
+	{
+		if (Check_Odd_OR_Even(Counter) == en_Odd_OR_Even::Even)
+		{
+			sum += Counter;
+		}
+	}
+	return sum;
+}
+int Sum_Even_Numbers_From_1toN_Using_While(int num) {
+	cout << "Sum_Even_Numbers_From_1toN_Using_While:" << endl;
+
+	int counter = 0, sum = 0;
+	while (counter < num)
+	{
+		counter++;
+
+		if (Check_Odd_OR_Even(counter) == en_Odd_OR_Even::Even)
+			sum += counter;
+	}
+	return sum;
+}
+int Sum_Even_Numbers_From_1toN_Using_DoWhile(int num) {
+	cout << "Sum_Even_Numbers_From_1toN_Using_DoWhile:" << endl;
+	
+	int counter = 0, sum = 0;
+	do
+	{
+		counter++;
+		if (Check_Odd_OR_Even(counter) == en_Odd_OR_Even::Even)
+			sum += counter;
+
+	} while (counter < num);
+	return sum;
+}
+
+int main()
+{//29 My Solution
+ 
+	int num = Read_Number();
+
+	cout << "	" << Sum_Even_Numbers_From_1toN_Using_For(num) << endl;
+	cout << "	" << Sum_Even_Numbers_From_1toN_Using_While(num) << endl;
+	cout << "	" << Sum_Even_Numbers_From_1toN_Using_DoWhile(num) << endl;
+
+	return 0;
+}
