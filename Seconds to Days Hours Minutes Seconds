@@ -1,0 +1,63 @@
+#include <iostream>
+#include <string>
+using namespace std;
+//43 Pro Solution
+//Seconds to Days Hours Minutes Seconds
+
+int Read_Positive_Numbers(string massage) {
+
+	int number=0;
+	do
+	{
+	cout << massage << endl;
+	cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+
+struct St_Task_Duration
+{
+	int Days, Hours, Minutes, Seconds;
+};
+
+St_Task_Duration Seconds_To_Task_Duration(int Total_Seconds) {
+
+	const	int SecondsPerDay = 24 * 60 * 60;
+	const	int SecondsPerHour = 60 * 60;
+	const	int SecondsPerMinute = 60;
+
+	St_Task_Duration Task_Duration;
+	int Remainder = 0;
+
+	Task_Duration.Days = floor(Total_Seconds / SecondsPerDay);
+	Remainder = Total_Seconds % SecondsPerDay;
+
+	Task_Duration.Hours = floor(Remainder / SecondsPerHour);
+	Remainder %= SecondsPerHour;
+
+	Task_Duration.Minutes = floor(Remainder / SecondsPerMinute);
+	Remainder %= SecondsPerMinute;
+
+	Task_Duration.Seconds = Remainder;
+
+	return Task_Duration;
+}
+
+void Print_Task_Duration_Details(St_Task_Duration Task_Duration){
+
+	cout << endl<<"		"
+		<< Task_Duration.Days << "d:"
+		<< Task_Duration.Hours << "h:"
+		<< Task_Duration.Minutes << "m:"
+		<< Task_Duration.Seconds<<"s \n\n";
+}
+
+int main(){
+	
+	int Total_Seconds = Read_Positive_Numbers("Enter Total Seconds:");
+	
+	Print_Task_Duration_Details(Seconds_To_Task_Duration(Total_Seconds));
+
+	return 0;
+}
