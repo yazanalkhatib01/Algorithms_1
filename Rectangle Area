@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void Read_Numbers(float& num1,float& num2) {
+
+	cout << "Enter Number One: " << endl;
+	cin >> num1;
+
+	cout << "Enter Number Tow: " << endl;
+	cin >> num2;
+}
+
+float Calculat_Rectangle_Area(float num1, float num2) {
+	return num1 * num2;
+}
+
+void Prent_Resulr(float REC_Area) {
+
+	cout << "\nThe Reactangle Area is: " << REC_Area << endl;
+}
+
+int main()
+{//15 Solution
+
+	float num1, num2;
+	Read_Numbers(num1, num2);
+	Prent_Resulr(Calculat_Rectangle_Area(num1, num2));
+
+	return 0;
+}
