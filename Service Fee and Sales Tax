@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+using namespace std;
+//40 PRO Solution
+/*
+service fee and sales tax
+*/
+
+float Read_Positive_Numbers(string message) {
+
+	float number=0;
+	do
+	{
+	cout << message << endl;
+	cin >> number;
+
+	} while (number <= 0);
+
+	return number;
+}
+
+float TotalBill_after_service_and_tax(float TotalBill) {
+
+	return (TotalBill * 1.1) * 1.16;
+}
+
+int main(){
+
+	float TotalBill = Read_Positive_Numbers("Enter Total Bill= ");
+	
+	cout << "Total Bill= "<< TotalBill << endl;
+	
+	cout << "Total Bill after service and tax= " 
+		<< TotalBill_after_service_and_tax(TotalBill) << endl;
+	
+	return 0;
+}
