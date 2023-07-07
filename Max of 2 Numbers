@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void Read_Number(int& num1,int& num2) {
+
+	cout << "Enter Number One:" << endl;
+	cin >> num1;
+
+	cout << "Enter Number Tow:" << endl;
+	cin >> num2;
+}
+
+int Max_Number(int num1,int num2) {
+
+	if (num1 >= num2)
+		return num1;
+	else
+		return num2;
+}
+
+void Prent_Max_Number(int max_num) {
+
+	cout << "\n The Maximum Number Is:"<<max_num << endl;
+}
+
+int main()
+{//12 Pro Solution
+	int num1, num2;
+
+	Read_Number(num1,num2);
+	Prent_Max_Number(Max_Number(num1,num2));
+
+	return 0;
+}
