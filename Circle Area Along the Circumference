@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+float Read_Circumference() {
+
+	float L;
+	cout << "Enter along L: " << endl;
+	cin >> L;
+	return L;
+}
+
+float Circle_Area_ByCircumference(float L) {
+	
+	const float PI= 3.141592653589793238462643383279502884197;
+	
+	float Area = (pow(L,2))/(4*PI);
+	return Area;
+}
+
+void Print_Result(float Area) {
+
+	cout << "\n Circle Area= " << Area << endl;
+}
+
+int main()
+{//21 My Solution
+
+	Print_Result(Circle_Area_ByCircumference(Read_Circumference()));
+
+	return 0;
+}
