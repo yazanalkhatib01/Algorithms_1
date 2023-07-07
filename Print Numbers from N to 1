@@ -1,0 +1,56 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int Read_Number() {
+	int N;
+	cout << "Enter Your Number N:" << endl;
+	cin >> N;
+	return N;
+}
+
+void Prent_RangeFrom_NTo1_Using_For(int N) {
+	
+	cout << "Prent_RangeFrom1ToN_Using_For:\n" << endl;
+
+	for (int Counter = N; Counter >= 1; Counter--)
+	{
+		cout << Counter << endl;
+	}
+}
+
+void Prent_RangeFrom_NTo1_Using_While(int N) {
+
+	cout << "Prent_RangeFrom1ToN_Using_While:\n" << endl;
+
+	int counter = N + 1;
+	while (counter > 1)
+	{
+		counter--;
+		cout << counter << endl;
+	}
+}
+
+void Prent_RangeFrom_NTo1_Using_DoWhile(int N) {
+
+	cout << "Prent_RangeFrom1ToN_Using_DoWhile:" << endl;
+
+	int counter = N + 1;
+	do
+	{
+		counter--;
+		cout << counter << endl;
+	} while (counter > 1);
+}
+
+int main()
+{//27 Pro Solution
+ 
+	int N = Read_Number();
+
+	Prent_RangeFrom_NTo1_Using_For(N);
+	Prent_RangeFrom_NTo1_Using_While(N);
+	Prent_RangeFrom_NTo1_Using_DoWhile(N);
+
+	return 0;
+}
