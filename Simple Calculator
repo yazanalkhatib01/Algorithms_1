@@ -1,0 +1,55 @@
+#include <iostream>
+#include <string>
+using namespace std;
+//36 Pro Solution
+
+float Read_Numbers(string message) {
+
+	float num = 0;
+	cout << message << endl;
+	cin >> num;
+	return num;
+}
+
+enum en_Operation_Type
+{
+	add = '+', subtract = '-',
+	multiply = '*', divide = '/'
+};
+
+en_Operation_Type Read_Operation_Type() {
+	
+	char operation='+';
+	cout << "Enter Operation Type(+,-,*,/):" << endl;
+	cin >> operation;
+
+	return (en_Operation_Type)operation;
+}
+
+float calcolat(float num1,float num2,en_Operation_Type O_T){
+
+	switch (O_T)
+	{
+	case en_Operation_Type::add:
+		return num1 + num2;
+	case subtract:
+		return num1 - num2;
+	case multiply:
+		return num1 * num2;
+	case divide:
+		return num1 / num2;
+	default:
+		return num1 + num2;
+	}
+}
+
+int main(){
+	float number1 = Read_Numbers("enter first number");
+	float number2 = Read_Numbers("enter second number");
+
+	en_Operation_Type O_Type = Read_Operation_Type();
+
+	cout << endl << "Result = " << calcolat(number1, number2, O_Type) << endl;
+
+	return 0;
+}
