@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void Read_Number(int& num1,int& num2) {
+
+	cout << "Enter Number One:" << endl;
+	cin >> num1;
+
+	cout << "Enter Number Tow:" << endl;
+	cin >> num2;
+
+}
+
+void Swap_Numbers(int& num1,int& num2) {
+
+	int Box;
+	Box = num1;
+	num1 = num2;
+	num2 = Box;
+}
+
+void Prent_Number(int num1,int num2) {
+
+	cout << "\nNUMBER1= " << num1
+		<< "Number2= " << num2 << endl;
+}
+
+int main()
+{//14 Pro Solution
+	int num1,num2;
+
+	Read_Number(num1,num2);
+	Prent_Number(num1, num2);
+
+	Swap_Numbers(num1, num2);
+	Prent_Number(num1, num2);
+
+	return 0;
+}
