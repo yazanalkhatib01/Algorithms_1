@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int Read_Number() {
+	
+	int num;
+	cout << "Enter Number: " << endl;
+	cin >> num;
+
+	return num;
+}
+
+void POWER_of_2_3_4(int Number) {
+
+	int A, B, C;
+
+	A = Number * Number;
+	B = Number * Number * Number;
+	C = Number * Number * Number * Number;
+	cout << A << " " << B << " " << C << endl;
+}
+
+int main()
+{//31 Pro Solution
+ 
+	POWER_of_2_3_4(Read_Number());
+	
+	return 0;
+}
