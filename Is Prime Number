@@ -1,0 +1,52 @@
+#include <iostream>
+#include <string>
+using namespace std;
+//38 pro Solution
+/* prime number */
+
+float Read_Positive_Number(string message) {
+
+	float num=0;
+	do
+	{
+	cout << message << endl;
+	cin >> num;
+
+	} while (num <= 0);
+
+	return num;
+}
+enum en_Peime_NotPrime { prime = 1, notprime = 2 };
+
+en_Peime_NotPrime Check_Number(int number) {
+	
+	int M = round(number / 2);//round()التقريب لاقرب عدد صحيح
+
+	for (int Counter = 2; Counter <= M; Counter++)
+	{       
+		if (number % Counter == 0)
+			return en_Peime_NotPrime::notprime;
+	}
+
+	return en_Peime_NotPrime::prime;
+}
+
+void Print_Number_Type(int number) {
+
+		switch (Check_Number(number))
+		{
+		case en_Peime_NotPrime::prime:
+			cout << "The Number is Prime" << endl;
+			break;
+		case en_Peime_NotPrime::notprime:
+			cout << "This Number is Not Prime" << endl;
+			break;
+		}
+}
+
+int main(){
+
+	Print_Number_Type(Read_Positive_Number("Please enter a Positive Number:"));
+
+	return 0;
+}
