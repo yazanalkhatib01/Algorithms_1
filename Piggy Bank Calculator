@@ -1,0 +1,51 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct st_Piggy_Banck_Contenet {
+	int Penny, Nickel, Dime, Quarter, Dollar;
+};
+
+st_Piggy_Banck_Contenet Read_Piggy_Bank_Contenet() {
+
+	st_Piggy_Banck_Contenet Piggy_Bank_Contenet;
+
+	cout << "Enter Penny:" << endl;
+	cin >> Piggy_Bank_Contenet.Penny;
+
+	cout << "Enter Nickel:" << endl;
+	cin >> Piggy_Bank_Contenet.Nickel;
+
+	cout << "Enter Dime:" << endl;
+	cin >> Piggy_Bank_Contenet.Dime;
+
+	cout << "Enter Quarter:" << endl;
+	cin >> Piggy_Bank_Contenet.Quarter;
+
+	cout << "Enter Dollar:" << endl;
+	cin >> Piggy_Bank_Contenet.Dollar;
+
+	return Piggy_Bank_Contenet;
+}
+
+int Calculate_Total_Pennies(st_Piggy_Banck_Contenet PiggyBank){
+
+	int TotalPennies = 0;
+
+	TotalPennies = PiggyBank.Penny * 1 + PiggyBank.Nickel * 5
+		+ PiggyBank.Dime * 10 + PiggyBank.Quarter * 25
+		+ PiggyBank.Dollar * 100;
+
+	return TotalPennies;
+}
+
+int main()
+{//35 Pro Solution
+	
+	int TotalPennies = Calculate_Total_Pennies(Read_Piggy_Bank_Contenet());
+
+	cout << "Total Pennies= " << TotalPennies << endl;
+	cout << "Total Doullars= " << (float)TotalPennies / 100 << endl;
+
+	return 0;
+}
