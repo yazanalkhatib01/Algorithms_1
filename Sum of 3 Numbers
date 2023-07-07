@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void ReadNumber(int& one,int& tow,int& three) {
+
+	cout << "Enter Number One" << endl;
+	cin >>one ;
+
+	cout << "Enter Number Tow" << endl;
+	cin >>tow ;
+
+	cout << "Enter Number Three" << endl;
+	cin >>three ;
+}
+
+int SumOf3Numbers(int one,int tow,int three) {
+
+	return one + tow + three;
+}
+
+void PrintResult(int Total) {
+
+
+	cout << "Sum Number is:" << Total << endl;
+}
+
+int main()
+{//9 Pro Solution
+
+	int num1, num2, num3;
+
+	ReadNumber(num1, num2, num3);
+	PrintResult(SumOf3Numbers(num1, num2, num3));
+	return 0;
+}
