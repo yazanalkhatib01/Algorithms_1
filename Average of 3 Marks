@@ -1,0 +1,41 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void ReadNumber(int& mark1,int& mark2,int& mark3) {
+
+	cout << "Enter Mark One" << endl;
+	cin >> mark1;
+
+	cout << "Enter Mark Tow" << endl;
+	cin >> mark2;
+
+	cout << "Enter Mark Three" << endl;
+	cin >> mark3;
+}
+
+int Sum_Of_Three_Numbers(int mark1, int mark2, int mark3) {
+
+	return mark1 + mark2 + mark3;
+}
+
+float Calculat_Average_Marks(int mark1, int mark2, int mark3) {
+
+	return (float)Sum_Of_Three_Numbers(mark1, mark2, mark3) / 3;
+}
+
+void Prent_Average(int Average) {
+
+	cout << "Average of Three Marks = " << Average << endl;
+}
+
+int main()
+{//10 Pro Solution
+
+	int mark1, mark2, mark3;
+
+	ReadNumber(mark1, mark2, mark3);
+	Prent_Average(Calculat_Average_Marks(mark1, mark2, mark3));
+
+	return 0;
+}
