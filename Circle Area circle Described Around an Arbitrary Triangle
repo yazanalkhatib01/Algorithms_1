@@ -1,0 +1,41 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void Read_TriangleData(float& A,float& B, float& C) {
+
+	cout << "Enter Triangle Side A: " << endl;
+	cin >> A;
+	
+	cout << "Enter Triangle Base B: " << endl;
+	cin >> B;
+
+	cout << "Enter Triangle Side C: " << endl;
+	cin >> C;
+}
+
+float Circle_Area_By_A_Triangle(float A,float B,float C) {
+	
+	const float PI= 3.141592653589793238462643383279502884197;
+	
+	float P = (A + B + C) / 2;
+
+	float Area = PI * pow((A * B * C) / (4 * (sqrt(P * (P - A) * (P - B) * (P - C)))), 2);
+	return Area;
+}
+
+void Print_Result(float Area) {
+
+	cout << "\n Circle Area= " << Area << endl;
+}
+
+int main()
+{//23 My Solution
+
+	float A, B, C;
+	Read_TriangleData(A, B, C);
+
+	Print_Result(Circle_Area_By_A_Triangle(A, B, C));
+
+	return 0;
+}
