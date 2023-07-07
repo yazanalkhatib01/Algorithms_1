@@ -1,0 +1,54 @@
+#include <iostream>
+#include <string>
+using namespace std;
+//42 pro Solution
+//Task Duration In Seconds
+
+struct St_Task_Duration
+{
+	int Days, Hours, Minutes, Secondes;
+};
+
+int Read_Positive_Numbers(string message) {
+
+	int number=0;
+	do
+	{
+	cout << message << endl;
+	cin >> number;
+
+	} while (number <= 0);
+
+	return number;
+}
+
+St_Task_Duration Read_Task_Duration() {
+
+	St_Task_Duration Task_Duration;
+	Task_Duration.Days= Read_Positive_Numbers("Enter Numbers Of Days:");
+	Task_Duration.Hours = Read_Positive_Numbers("Enter Numbers Of Hours:");
+	Task_Duration.Minutes = Read_Positive_Numbers("Enter Numbers Of Minutes:");
+	Task_Duration.Secondes = Read_Positive_Numbers("Enter Numbers Of Seconds:");
+	
+	return Task_Duration;
+}
+
+int Task_Duration_InSeconds(St_Task_Duration Task_Duration) {
+
+	int Duration_InSeconds = 0;
+
+	Duration_InSeconds = Task_Duration.Days * 24 * 60 * 60;
+	Duration_InSeconds += Task_Duration.Hours * 60 * 60;
+	Duration_InSeconds += Task_Duration.Minutes * 60;
+	Duration_InSeconds += Task_Duration.Secondes;
+
+	return Duration_InSeconds;
+}
+
+int main(){
+ 
+	cout << "Task_Duration_InSeconds= "<< 
+		Task_Duration_InSeconds(Read_Task_Duration())<<" Seconds" << endl;
+
+	return 0;
+}
