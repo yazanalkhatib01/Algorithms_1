@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void Read_Numbers(float& A,float& B) {
+
+	cout << "Enter Number A: " << endl;
+	cin >> A;
+
+	cout << "Enter Number D: " << endl;
+	cin >> B;
+}
+
+float Rectangle_Area_BySideAndDiagonal(float num1, float num2) {
+	
+	float Area = num1 * sqrt(pow(num2, 2) - pow(num1, 2));
+
+	return Area;
+}
+
+void Print_Result(float Area) {
+
+	cout << "\n Reactangle Area= " << Area << endl;
+}
+
+int main()
+{//16 Solution
+
+	float A, B;
+	Read_Numbers(A, B);
+	Print_Result(Rectangle_Area_BySideAndDiagonal(A, B));
+
+	return 0;
+}
