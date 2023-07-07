@@ -1,0 +1,41 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int Read_Number_InRange(int from,int To) {
+
+	int gread;
+
+	do
+	{
+		cout << "Enter Grade:" << endl;
+		cin >> gread;
+
+	} while (gread < from || gread > To);
+
+	return gread;
+}
+
+char Get_Gread_Letter(int gread) {
+
+	if (gread >= 90)
+		return 'A';
+	else if (gread >= 80)
+		return 'B';
+	else if (gread >= 70)
+		return 'C';
+	else if (gread >= 60)
+		return 'D';
+	else if (gread >= 50)
+		return 'E';
+	else
+		return 'F';
+}
+
+int main()
+{//33 Pro Solution
+
+	cout << Get_Gread_Letter(Read_Number_InRange(0, 100));
+
+	return 0;
+}
