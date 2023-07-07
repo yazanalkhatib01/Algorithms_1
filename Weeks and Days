@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string>
+using namespace std;
+//41 pro Solution
+//weeks and days
+
+
+float Read_Positive_Numbers_ofHours(string message) {
+
+	float number=0;
+	do
+	{
+	cout << message << endl;
+	cin >> number;
+
+	} while (number <= 0);
+
+	return number;
+}
+
+float Hours_To_Days(float Numbers_of_Hours) {
+
+	return Numbers_of_Hours / 24;
+}
+
+float Hours_To_Weeks(float Numbers_of_Hours) {
+
+	return (float)Numbers_of_Hours / 24 / 7;
+}
+
+float Days_To_Weeks(float Numbers_of_Days) {
+	
+	return (float)Numbers_of_Days / 7;
+}
+
+int main(){
+
+	float NumbersOfHours = Read_Positive_Numbers_ofHours("Enter Numbers Of Hours= ");
+	float NumbersOfDays = Hours_To_Days(NumbersOfHours);
+	float NumbersOfWeeks = Days_To_Weeks(NumbersOfDays);
+
+	cout << "Total Hours= "<< NumbersOfHours << endl;
+	cout << "Total Days= " << NumbersOfDays << endl;
+	cout << "Total Weeks= " << Hours_To_Weeks(NumbersOfHours) << endl;
+	
+	return 0;
+}
