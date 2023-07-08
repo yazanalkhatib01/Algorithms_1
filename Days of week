@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+using namespace std;
+//44 pro Solution
+// Days of week
+
+int Read_Positive_Number_1_7(string message,int from,int to) {
+
+	int Number = 0;
+	do
+	{
+		cout << message << endl;
+		cin >> Number;
+	} while (Number < from || Number > to);
+
+	return Number;
+}
+
+enum en_Day_OfWeek
+{
+	Sunday = 1, Monday = 2, Tuesday = 3, Wednesday = 4,
+	Thursday = 5, Friday = 6, Saturday = 7
+};
+
+en_Day_OfWeek Read_Day_OfWeek() {
+
+	return (en_Day_OfWeek)Read_Positive_Number_1_7("Enter Number Of Day:", 1, 7);
+}
+
+string Get_DayOfWeek(en_Day_OfWeek Day) {
+
+	switch (Day)
+	{
+	case Sunday:
+		return"Sunday";
+	case Monday:
+		return"Monday";
+	case Tuesday:
+		return"Tuesday";
+	case Wednesday:
+		return"Wednesday";
+	case Thursday:
+		return"Thursday";
+	case Friday:
+		return"Friday";
+	case Saturday:
+		return"Saturday";
+	default:
+		return"Not Avaled Day";
+	}
+}
+
+int main(){
+
+	cout << Get_DayOfWeek(Read_Day_OfWeek()) << endl;
+
+	return 0;
+}
