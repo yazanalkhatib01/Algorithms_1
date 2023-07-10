@@ -1,0 +1,33 @@
+#include<iostream>
+#include<string>
+using namespace std;
+//47 My Solution
+// Loan Installment Months
+
+float Read_Positive_Number(string message) {
+
+	int number = 0;
+
+	do
+	{
+		cout << message << endl;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+
+float Total_Months(float Loan_Amount,float Monthly_InStallment) {
+
+	return (float)Loan_Amount / Monthly_InStallment;
+}
+
+int main(){
+
+	float Loan_Amount = Read_Positive_Number("Enter Loan Amoun?");
+	float Monthly_InStallment = Read_Positive_Number("Enter Monthly Monthly InStallment?");
+
+	cout << "\n Total Monthly to Pay= " << Total_Months(Loan_Amount, Monthly_InStallment) << " Months" << endl;
+
+	return 0;
+}
