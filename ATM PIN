@@ -1,0 +1,46 @@
+#include<iostream>
+#include<string>
+using namespace std;
+//49 pro Solution
+// ATM PIN
+
+string Read_PIN_Code() {
+
+	string PinCode;
+	cout << "Enter Pin Code: " << endl;
+	cin >> PinCode;
+
+	return PinCode;
+}
+
+bool Login() {
+
+	string PinCode;
+
+	do
+	{
+		PinCode = Read_PIN_Code();
+
+		if (PinCode == "1234")
+		{
+			return 1;
+		}
+		else
+		{
+			cout << "\nWrong Pin" << endl;
+			system("color 4F");
+		}
+
+	} while (PinCode != "1234");
+}
+
+int main(){
+
+	if (Login())
+	{
+		cout << "\n Your account balance is "<< 7500 << endl;
+		system("color 2F");
+	}
+
+	return 0;
+}
