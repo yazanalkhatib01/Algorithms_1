@@ -1,0 +1,69 @@
+#include<iostream>
+#include<string>
+using namespace std;
+//45 My Solution
+// Month Of Year
+
+int Read_Number_InRange(string message,int from,int to) {
+
+	int number = 0;
+	do
+	{
+		cout << message << endl;
+		cin >> number;
+	} while (number<from || number>to);
+
+	return number;
+}
+
+enum en_Month_OfYear
+{
+	January = 1, February = 2, March = 3, April = 4, May = 5, June = 6, July = 7,
+	August = 8, September = 9, October = 10, November = 11, December = 12
+};
+
+en_Month_OfYear Read_Month_OfYear() {
+
+	return (en_Month_OfYear)Read_Number_InRange("Enter Number Month:", 1, 12);
+}
+
+string Get_Month_OfYear(en_Month_OfYear month) {
+
+	switch (month)
+	{
+	case January:
+		return" January";
+	case February:
+		return" February";
+	case March:
+		return" March";
+	case April:
+		return" April";
+	case May:
+		return" May";
+	case June:
+		return" June";
+	case July:
+		return" July";
+	case August:
+		return" August";
+	case September:
+		return" September";
+	case October:
+		return" October";
+	case November:
+		return" November";
+	case December:
+		return" December";
+	default:
+		return" ***Wrong Input***";
+	}
+	
+}
+
+int main(){
+
+	cout << Get_Month_OfYear(Read_Month_OfYear()) << endl;
+
+	return 0;
+}
