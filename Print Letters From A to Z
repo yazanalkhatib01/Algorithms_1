@@ -1,0 +1,20 @@
+#include<iostream>
+#include<string>
+using namespace std;
+//46 My Solution
+// Print Letters From A to Z
+
+void Print_Letters_from_AtoZ() {
+
+	for (int counter = 65; counter <= 90; counter++)
+	{
+		cout << char(counter) << endl;
+	}
+}
+
+int main(){
+
+	Print_Letters_from_AtoZ();
+	
+	return 0;
+}
